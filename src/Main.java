@@ -9,14 +9,14 @@ public class Main {
 		scale.add("S");
 		scale.add("R2");
 		scale.add("G3");
-		scale.add("M1");
+		scale.add("M2");
 		scale.add("P");
 		scale.add("D2");
-		scale.add("N2");
+		scale.add("N3");
 		scale.add("S");
-		Ragam Harikambhoji = new Ragam(scale);
+		Ragam Kalyani = new Ragam(scale);
 		CarnaticPlayer player = new CarnaticPlayer();
-		player.play(Harikambhoji, "G , G , R , R , S S R R G G R R S R G R S R S .D S R G P G R S R", 150);
+		player.play(Kalyani, "S. S. , S. N D R. S. N N D D P M G M P D N D , R. S. N D P M G M P D N", 150);
 
 	}
 
