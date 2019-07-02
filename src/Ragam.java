@@ -22,71 +22,97 @@ public class Ragam {
 		return toReturn;
 	}
 	
-	public void playRagam()
-	{
-		Player player = new Player();
-		player.play(makeString(westernScale));
-	}
-	
-	public void play(String swaramSequence)
-	{
-		ArrayList<String> notesToPlay = makeArrayList(swaramSequence);
-		String toPlay = "";
-		String lastSwaramPlayed = "";
-		
-		for(String swaram : notesToPlay)
-		{
-			toPlay = toPlay + findNoteinScale(swaram, lastSwaramPlayed) + " ";
-			lastSwaramPlayed = findNoteinScale(swaram, lastSwaramPlayed);
-		}
-		
-		Player player = new Player();
-		player.play(toPlay);
-	}
-	
 	public ArrayList<String> makeArrayList(String string)
 	{
 		ArrayList<String> toReturn = new ArrayList<String>(Arrays.asList(string.split(" ")));
 		return toReturn;
 	}
 	
-	public String findNoteinScale(String swaram, String lastSwaram)
+	public String getNote(String swaram)
 	{
 		if(swaram.equalsIgnoreCase("S"))
 		{
-			return westernScale.get(0);
+			return westernScale.get(0) + "4" + "q";
 		}
 		else if(swaram.equalsIgnoreCase("R"))
 		{
-			return westernScale.get(1);
+			return westernScale.get(1) + "4" + "q";
 		}
 		else if(swaram.equalsIgnoreCase("G"))
 		{
-			return westernScale.get(2);
+			return westernScale.get(2) + "4" + "q";
 		}
 		else if(swaram.equalsIgnoreCase("M"))
 		{
-			return westernScale.get(3);
+			return westernScale.get(3) + "4" + "q";
 		}
 		else if(swaram.equalsIgnoreCase("P"))
 		{
-			return westernScale.get(4);
+			return westernScale.get(4) + "4" + "q";
 		}
 		else if(swaram.equalsIgnoreCase("D"))
 		{
-			return westernScale.get(5);
+			return westernScale.get(5) + "4" + "q";
 		}
 		else if(swaram.equalsIgnoreCase("N"))
 		{
-			return westernScale.get(6);
+			return westernScale.get(6) + "4" + "q";
+		}
+		else if(swaram.equalsIgnoreCase(".S"))
+		{
+			return westernScale.get(0) + "3" + "q";
+		}
+		else if(swaram.equalsIgnoreCase(".R"))
+		{
+			return westernScale.get(1) + "3" + "q";
+		}
+		else if(swaram.equalsIgnoreCase(".G"))
+		{
+			return westernScale.get(2) + "3" + "q";
+		}
+		else if(swaram.equalsIgnoreCase(".M"))
+		{
+			return westernScale.get(3) + "3" + "q";
+		}
+		else if(swaram.equalsIgnoreCase(".P"))
+		{
+			return westernScale.get(4) + "3" + "q";
+		}
+		else if(swaram.equalsIgnoreCase(".D"))
+		{
+			return westernScale.get(5) + "3" + "q";
+		}
+		else if(swaram.equalsIgnoreCase(".N"))
+		{
+			return westernScale.get(6) + "3" + "q";
 		}
 		else if(swaram.equalsIgnoreCase("S."))
 		{
-			return westernScale.get(7);
+			return westernScale.get(0) + "5" + "q";
 		}
-		else if(swaram.equalsIgnoreCase(","))
+		else if(swaram.equalsIgnoreCase("R."))
 		{
-			return findNoteinScale(lastSwaram, lastSwaram);
+			return westernScale.get(1) + "5" + "q";
+		}
+		else if(swaram.equalsIgnoreCase("G."))
+		{
+			return westernScale.get(2) + "5" + "q";
+		}
+		else if(swaram.equalsIgnoreCase("M."))
+		{
+			return westernScale.get(3) + "5" + "q";
+		}
+		else if(swaram.equalsIgnoreCase("P."))
+		{
+			return westernScale.get(4) + "5" + "q";
+		}
+		else if(swaram.equalsIgnoreCase("D."))
+		{
+			return westernScale.get(5) + "5" + "q";
+		}
+		else if(swaram.equalsIgnoreCase("N."))
+		{
+			return westernScale.get(6) + "5" + "q";
 		}
 		else
 		{
@@ -106,202 +132,274 @@ public class Ragam {
 	
 	public String westernifySwaram(String swaram)
 	{
-		if(swaram.equalsIgnoreCase(".S"))
+		if(swaram.equalsIgnoreCase("S"))
 		{
-			return "C3";
-		}
-		else if(swaram.equalsIgnoreCase("S"))
-		{
-			return "C4";
-		}
-		else if(swaram.equalsIgnoreCase("S."))
-		{
-			return "C5";
-		}
-		else if(swaram.equalsIgnoreCase(".R1"))
-		{
-			return "C#3";
+			return "C";
 		}
 		else if(swaram.equalsIgnoreCase("R1"))
 		{
-			return "C#4";
-		}
-		else if(swaram.equalsIgnoreCase("R1."))
-		{
-			return "C#5";
-		}
-		else if(swaram.equalsIgnoreCase(".R2"))
-		{
-			return "D3";
+			return "C#";
 		}
 		else if(swaram.equalsIgnoreCase("R2"))
 		{
-			return "D4";
-		}
-		else if(swaram.equalsIgnoreCase("R2."))
-		{
-			return "D5";
-		}
-		else if(swaram.equalsIgnoreCase(".R3"))
-		{
-			return "D#3";
+			return "D";
 		}
 		else if(swaram.equalsIgnoreCase("R3"))
 		{
-			return "D#4";
-		}
-		else if(swaram.equalsIgnoreCase("R3."))
-		{
-			return "D#5";
-		}
-		else if(swaram.equalsIgnoreCase(".G1"))
-		{
-			return westernifySwaram(".R2");
+			return "D#";
 		}
 		else if(swaram.equalsIgnoreCase("G1"))
 		{
 			return westernifySwaram("R2");
 		}
-		else if(swaram.equalsIgnoreCase("G1."))
-		{
-			return westernifySwaram("R2.");
-		}
-		else if(swaram.equalsIgnoreCase(".G2"))
-		{
-			return westernifySwaram(".R3");
-		}
 		else if(swaram.equalsIgnoreCase("G2"))
 		{
 			return westernifySwaram("R3");
 		}
-		else if(swaram.equalsIgnoreCase("G2."))
-		{
-			return westernifySwaram("R3.");
-		}
-		else if(swaram.equalsIgnoreCase(".G3"))
-		{
-			return "E3";
-		}
 		else if(swaram.equalsIgnoreCase("G3"))
 		{
-			return "E4";
-		}
-		else if(swaram.equalsIgnoreCase("G3."))
-		{
-			return "E5";
-		}
-		else if(swaram.equalsIgnoreCase(".M1"))
-		{
-			return "F3";
+			return "E";
 		}
 		else if(swaram.equalsIgnoreCase("M1"))
 		{
-			return "F4";
-		}
-		else if(swaram.equalsIgnoreCase("M1."))
-		{
-			return "F5";
-		}
-		else if(swaram.equalsIgnoreCase(".M2"))
-		{
-			return "F#3";
+			return "F";
 		}
 		else if(swaram.equalsIgnoreCase("M2"))
 		{
-			return "F#4";
-		}
-		else if(swaram.equalsIgnoreCase("M2."))
-		{
-			return "F#5";
-		}
-		else if(swaram.equalsIgnoreCase(".P"))
-		{
-			return "G3";
+			return "F#";
 		}
 		else if(swaram.equalsIgnoreCase("P"))
 		{
-			return "G4";
-		}
-		else if(swaram.equalsIgnoreCase("P."))
-		{
-			return "G5";
-		}
-		else if(swaram.equalsIgnoreCase(".D1"))
-		{
-			return "G#3";
+			return "G";
 		}
 		else if(swaram.equalsIgnoreCase("D1"))
 		{
-			return "G#4";
-		}
-		else if(swaram.equalsIgnoreCase("D1."))
-		{
-			return "G#5";
-		}
-		else if(swaram.equalsIgnoreCase(".D2"))
-		{
-			return "A3";
+			return "G#";
 		}
 		else if(swaram.equalsIgnoreCase("D2"))
 		{
-			return "A4";
-		}
-		else if(swaram.equalsIgnoreCase("D2."))
-		{
-			return "A5";
-		}
-		else if(swaram.equalsIgnoreCase(".D3"))
-		{
-			return "A#3";
+			return "A";
 		}
 		else if(swaram.equalsIgnoreCase("D3"))
 		{
-			return "A#4";
-		}
-		else if(swaram.equalsIgnoreCase("D3."))
-		{
-			return "A#5";
-		}
-		else if(swaram.equalsIgnoreCase(".N1"))
-		{
-			return westernifySwaram(".D2");
+			return "A#";
 		}
 		else if(swaram.equalsIgnoreCase("N1"))
 		{
 			return westernifySwaram("D2");
 		}
-		else if(swaram.equalsIgnoreCase("N1."))
-		{
-			return westernifySwaram("D2.");
-		}
-		else if(swaram.equalsIgnoreCase(".N2"))
-		{
-			return westernifySwaram(".D3");
-		}
 		else if(swaram.equalsIgnoreCase("N2"))
 		{
 			return westernifySwaram("D3");
 		}
-		else if(swaram.equalsIgnoreCase("N2."))
-		{
-			return westernifySwaram("D3.");
-		}
-		else if(swaram.equalsIgnoreCase(".N3"))
-		{
-			return "B3";
-		}
 		else if(swaram.equalsIgnoreCase("N3"))
 		{
-			return "B4";
-		}
-		else if(swaram.equalsIgnoreCase("N3."))
-		{
-			return "B5";
+			return "B";
 		}
 		else
 		{
-			return "problem";
+			return "--";
 		}
 	}
+	
+//	public String westernifySwaram(String swaram)
+//	{
+//		if(swaram.equalsIgnoreCase(".S"))
+//		{
+//			return "C3";
+//		}
+//		else if(swaram.equalsIgnoreCase("S"))
+//		{
+//			return "C4";
+//		}
+//		else if(swaram.equalsIgnoreCase("S."))
+//		{
+//			return "C5";
+//		}
+//		else if(swaram.equalsIgnoreCase(".R1"))
+//		{
+//			return "C#3";
+//		}
+//		else if(swaram.equalsIgnoreCase("R1"))
+//		{
+//			return "C#4";
+//		}
+//		else if(swaram.equalsIgnoreCase("R1."))
+//		{
+//			return "C#5";
+//		}
+//		else if(swaram.equalsIgnoreCase(".R2"))
+//		{
+//			return "D3";
+//		}
+//		else if(swaram.equalsIgnoreCase("R2"))
+//		{
+//			return "D4";
+//		}
+//		else if(swaram.equalsIgnoreCase("R2."))
+//		{
+//			return "D5";
+//		}
+//		else if(swaram.equalsIgnoreCase(".R3"))
+//		{
+//			return "D#3";
+//		}
+//		else if(swaram.equalsIgnoreCase("R3"))
+//		{
+//			return "D#4";
+//		}
+//		else if(swaram.equalsIgnoreCase("R3."))
+//		{
+//			return "D#5";
+//		}
+//		else if(swaram.equalsIgnoreCase(".G1"))
+//		{
+//			return westernifySwaram(".R2");
+//		}
+//		else if(swaram.equalsIgnoreCase("G1"))
+//		{
+//			return westernifySwaram("R2");
+//		}
+//		else if(swaram.equalsIgnoreCase("G1."))
+//		{
+//			return westernifySwaram("R2.");
+//		}
+//		else if(swaram.equalsIgnoreCase(".G2"))
+//		{
+//			return westernifySwaram(".R3");
+//		}
+//		else if(swaram.equalsIgnoreCase("G2"))
+//		{
+//			return westernifySwaram("R3");
+//		}
+//		else if(swaram.equalsIgnoreCase("G2."))
+//		{
+//			return westernifySwaram("R3.");
+//		}
+//		else if(swaram.equalsIgnoreCase(".G3"))
+//		{
+//			return "E3";
+//		}
+//		else if(swaram.equalsIgnoreCase("G3"))
+//		{
+//			return "E4";
+//		}
+//		else if(swaram.equalsIgnoreCase("G3."))
+//		{
+//			return "E5";
+//		}
+//		else if(swaram.equalsIgnoreCase(".M1"))
+//		{
+//			return "F3";
+//		}
+//		else if(swaram.equalsIgnoreCase("M1"))
+//		{
+//			return "F4";
+//		}
+//		else if(swaram.equalsIgnoreCase("M1."))
+//		{
+//			return "F5";
+//		}
+//		else if(swaram.equalsIgnoreCase(".M2"))
+//		{
+//			return "F#3";
+//		}
+//		else if(swaram.equalsIgnoreCase("M2"))
+//		{
+//			return "F#4";
+//		}
+//		else if(swaram.equalsIgnoreCase("M2."))
+//		{
+//			return "F#5";
+//		}
+//		else if(swaram.equalsIgnoreCase(".P"))
+//		{
+//			return "G3";
+//		}
+//		else if(swaram.equalsIgnoreCase("P"))
+//		{
+//			return "G4";
+//		}
+//		else if(swaram.equalsIgnoreCase("P."))
+//		{
+//			return "G5";
+//		}
+//		else if(swaram.equalsIgnoreCase(".D1"))
+//		{
+//			return "G#3";
+//		}
+//		else if(swaram.equalsIgnoreCase("D1"))
+//		{
+//			return "G#4";
+//		}
+//		else if(swaram.equalsIgnoreCase("D1."))
+//		{
+//			return "G#5";
+//		}
+//		else if(swaram.equalsIgnoreCase(".D2"))
+//		{
+//			return "A3";
+//		}
+//		else if(swaram.equalsIgnoreCase("D2"))
+//		{
+//			return "A4";
+//		}
+//		else if(swaram.equalsIgnoreCase("D2."))
+//		{
+//			return "A5";
+//		}
+//		else if(swaram.equalsIgnoreCase(".D3"))
+//		{
+//			return "A#3";
+//		}
+//		else if(swaram.equalsIgnoreCase("D3"))
+//		{
+//			return "A#4";
+//		}
+//		else if(swaram.equalsIgnoreCase("D3."))
+//		{
+//			return "A#5";
+//		}
+//		else if(swaram.equalsIgnoreCase(".N1"))
+//		{
+//			return westernifySwaram(".D2");
+//		}
+//		else if(swaram.equalsIgnoreCase("N1"))
+//		{
+//			return westernifySwaram("D2");
+//		}
+//		else if(swaram.equalsIgnoreCase("N1."))
+//		{
+//			return westernifySwaram("D2.");
+//		}
+//		else if(swaram.equalsIgnoreCase(".N2"))
+//		{
+//			return westernifySwaram(".D3");
+//		}
+//		else if(swaram.equalsIgnoreCase("N2"))
+//		{
+//			return westernifySwaram("D3");
+//		}
+//		else if(swaram.equalsIgnoreCase("N2."))
+//		{
+//			return westernifySwaram("D3.");
+//		}
+//		else if(swaram.equalsIgnoreCase(".N3"))
+//		{
+//			return "B3";
+//		}
+//		else if(swaram.equalsIgnoreCase("N3"))
+//		{
+//			return "B4";
+//		}
+//		else if(swaram.equalsIgnoreCase("N3."))
+//		{
+//			return "B5";
+//		}
+//		else
+//		{
+//			return "problem";
+//		}
+//	}
 
 }
