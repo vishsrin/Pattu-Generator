@@ -4,7 +4,7 @@ import org.jfugue.player.Player;
 public class HelloWorld {
 	public static void main(String[] args) {
 	Player player = new Player();
-	player.play("T200 C4h C4h G4h G4h A4h A4h G4w F4h F4h E4h E4h D4q D4q D4q D4q C4w");
+	player.play("T200 C4 C#4 D4 D#4 E4 F4 F#4 G4 G#4 A4 A#4 B4");
 	}
 	
 
