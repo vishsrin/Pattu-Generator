@@ -11,16 +11,9 @@ public class CarnaticPlayer {
 	}
 
 	public void play(Ragam ragam, String swaramsToPlay, int speed) {
-		ArrayList<String> swarams = makeArrayList(swaramsToPlay);
+		System.out.println(swaramsToPlay);
 
-		String toPlay = "T" + speed + " ";
-		for (String swaram : swarams) {
-			if (swaram.equalsIgnoreCase(",")) {
-				toPlay = increaseLengthLastNote(toPlay);
-			} else {
-				toPlay = toPlay + ragam.getNote(swaram) + " ";
-			}
-		}
+		String toPlay = "T" + speed + " " + swaramsToPlay;
 
 		player.play(toPlay);
 	}
