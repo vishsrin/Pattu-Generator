@@ -9,7 +9,7 @@ public class Main {
 		
 		SongPlayer player = new SongPlayer(path);
 		
-		player.play(400);
+		player.play(600);
 
 	}
 

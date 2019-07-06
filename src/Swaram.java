@@ -1,3 +1,4 @@
+import org.jfugue.pattern.Pattern;
 
 public class Swaram {
 	private String name;
@@ -10,9 +11,9 @@ public class Swaram {
 		this.length = length;
 	}
 	
-	public String play(Ragam ragam)
+	public void play(Ragam ragam, Pattern song)
 	{
-		return ragam.play(name, length);
+		ragam.play(name, length, song);
 	}
 
 }

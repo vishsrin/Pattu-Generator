@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import org.jfugue.pattern.Pattern;
 import org.jfugue.player.Player;
 
 public class CarnaticPlayer {
@@ -10,12 +11,10 @@ public class CarnaticPlayer {
 		player = new Player();
 	}
 
-	public void play(Ragam ragam, String swaramsToPlay, int speed) {
+	public void play(Ragam ragam, Pattern swaramsToPlay, int speed) {
 		System.out.println(swaramsToPlay);
 
-		String toPlay = "T" + speed + " " + swaramsToPlay;
-
-		player.play(toPlay);
+		player.play(swaramsToPlay);
 	}
 	
 	public String increaseLengthLastNote(String notes)

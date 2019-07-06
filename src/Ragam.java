@@ -2,6 +2,8 @@ import java.util.ArrayList;
 
 import java.util.Arrays;
 
+import org.jfugue.pattern.Pattern;
+
 public class Ragam {
 	private ArrayList<String> westernScale;
 	
@@ -11,7 +13,7 @@ public class Ragam {
 		westernScale = westernifyScale(temp);
 	}
 	
-	public String play(String swaramName, int swaramLength)
+	public void play(String swaramName, int swaramLength, Pattern song)
 	{
 		String toReturn = getNote(swaramName);
 		
@@ -36,7 +38,7 @@ public class Ragam {
 			System.out.println("whoops");
 		}
 		
-		return toReturn + " ";
+		song.add(toReturn);
 	}
 	
 	public ArrayList<String> westernifyScale(ArrayList<String> carnaticScale)

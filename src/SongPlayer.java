@@ -1,9 +1,12 @@
 import java.util.ArrayList;
 
+import org.jfugue.pattern.Pattern;
+import org.jfugue.player.Player;
+
 public class SongPlayer {
 	private FiletoString converter;
 	private Ragam ragam;
-	CarnaticPlayer player;
+	Player player;
 	
 	public SongPlayer(String path) throws Exception
 	{
@@ -12,12 +15,12 @@ public class SongPlayer {
 		//System.out.println(nextLine);
 		ragam = new Ragam(nextLine);
 		
-		player = new CarnaticPlayer();
+		player = new Player();
 	}
 	
 	public void play(int speed) throws Exception
 	{
-		String song = "";
+		Pattern song = new Pattern("T" + speed) ;
 		
 		ArrayList<Avartanam> avartanams = new ArrayList<Avartanam>();
 		while(converter.hasNextLine())
@@ -33,10 +36,10 @@ public class SongPlayer {
 		
 		for(Avartanam avartanam : avartanams)
 		{
-			song = song + avartanam.play(ragam);
+			avartanam.play(ragam, song);
 		}
 		
-		player.play(ragam, song, speed);
+		player.play(song);
 	}
 
 }

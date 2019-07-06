@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import org.jfugue.pattern.Pattern;
+
 public class Avartanam {
 	private ArrayList<Swaram> swaramList;
 
@@ -60,14 +62,12 @@ public class Avartanam {
 		return toReturn;
 	}
 
-	public String play(Ragam ragam) {
+	public void play(Ragam ragam, Pattern song) {
 
 		String toPlay = "";
 
 		for (Swaram swaram : swaramList) {
-			toPlay = toPlay + swaram.play(ragam);
+			swaram.play(ragam, song);
 		}
-
-		return toPlay;
 	}
 }
