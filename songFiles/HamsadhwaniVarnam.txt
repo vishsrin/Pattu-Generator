@@ -1,4 +1,4 @@
-S R2 G3 M2 P D2 N3
+S R2 G3 -- P -- N3
 
 G , R , S , , , .N S R G R R S .N S R S S .N .P .N S R .P , .N , S , R
 G R S .N S R .P .N S R G P G N P , S. N S. R. , S. N P P G , R , S , R

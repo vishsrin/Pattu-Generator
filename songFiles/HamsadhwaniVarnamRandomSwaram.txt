@@ -1,0 +1,2 @@
+S R2 G3 -- P -- N3
+N. .R R R G. N. , G. .S .P , .G S .R .P N .S , , S. P. .R N. , S 

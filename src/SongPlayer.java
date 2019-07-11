@@ -1,3 +1,6 @@
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 
 import org.jfugue.pattern.Pattern;
@@ -7,6 +10,7 @@ public class SongPlayer {
 	private FiletoString converter;
 	private Ragam ragam;
 	Player player;
+	Pattern song;
 	
 	public SongPlayer(String path) throws Exception
 	{
@@ -20,7 +24,8 @@ public class SongPlayer {
 	
 	public void play(int speed) throws Exception
 	{
-		Pattern song = new Pattern("T" + speed) ;
+		System.out.print("called");
+		Pattern song = new Pattern("T" + speed);
 		
 		ArrayList<Avartanam> avartanams = new ArrayList<Avartanam>();
 		while(converter.hasNextLine())
@@ -39,7 +44,26 @@ public class SongPlayer {
 			avartanam.play(ragam, song);
 		}
 		
+		System.out.println(song);
 		player.play(song);
+	}
+	
+	public void generateRandom(String fileName, int numberofAvartanams) throws FileNotFoundException, UnsupportedEncodingException
+	{
+		int numberOfSwarams = numberofAvartanams * 8;
+		
+		String toPrint = ragam.getRandomSwaram(true) + " ";
+		
+		for(int i = 0; i < numberOfSwarams; i++)
+		{
+			toPrint = toPrint + ragam.getRandomSwaram(false) + " ";
+		}
+		System.out.println(toPrint);
+		
+		PrintWriter writer = new PrintWriter(fileName, "UTF-8");
+		writer.println(ragam.getFileNotation());
+		writer.println(toPrint);
+		writer.close();
 	}
 
 }

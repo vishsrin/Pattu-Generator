@@ -20,7 +20,7 @@ public class Avartanam {
 	}
 
 	public ArrayList<Swaram> makeSwaramList(ArrayList<String> swaramStringList) {
-		System.out.println(swaramStringList);
+		//System.out.println(swaramStringList);
 		ArrayList<Swaram> toReturn = new ArrayList<Swaram>();
 
 		String thisSwaram;
@@ -38,12 +38,12 @@ public class Avartanam {
 					nextSwaram = swaramStringList.get(i + 1);
 					int nextIndex = i + 1;
 
-					System.out.println(thisSwaram);
+					//System.out.println(thisSwaram);
 							
 					while (nextSwaram.equalsIgnoreCase(",")) {
-						System.out.println("next swaram is " + nextSwaram);
+						//System.out.println("next swaram is " + nextSwaram);
 						swaramLength++;
-						System.out.println("swaram length increased");
+						//System.out.println("swaram length increased");
 						if (nextIndex == swaramStringList.size() - 1) {
 							nextSwaram = "done";
 						} else {
@@ -51,7 +51,7 @@ public class Avartanam {
 							nextSwaram = swaramStringList.get(nextIndex);
 						}
 					}
-					System.out.println(swaramLength);
+					//System.out.println(swaramLength);
 
 					toReturn.add(new Swaram(thisSwaram, swaramLength));
 				}
@@ -63,8 +63,6 @@ public class Avartanam {
 	}
 
 	public void play(Ragam ragam, Pattern song) {
-
-		String toPlay = "";
 
 		for (Swaram swaram : swaramList) {
 			swaram.play(ragam, song);

@@ -9,7 +9,12 @@ public class Main {
 		
 		SongPlayer player = new SongPlayer(path);
 		
-		player.play(600);
+		//player.play(600);
+		
+		player.generateRandom("/Users/vishnu/Documents/GitHub/pattuStuff/songFiles/HamsadhwaniVarnamRandomSwaram.txt", 3);
+		
+		SongPlayer swaramPlayer = new SongPlayer("/Users/vishnu/Documents/GitHub/pattuStuff/songFiles/HamsadhwaniVarnamRandomSwaram.txt");
+		swaramPlayer.play(100);
 
 	}
 
