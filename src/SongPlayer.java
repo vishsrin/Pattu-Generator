@@ -25,7 +25,7 @@ public class SongPlayer {
 	public void play(int speed) throws Exception
 	{
 		System.out.print("called");
-		Pattern song = new Pattern("T" + speed);
+		Pattern song = new Pattern("T" + speed + " V0 I[Violin] C4o- V1 I[Flute]");
 		
 		ArrayList<Avartanam> avartanams = new ArrayList<Avartanam>();
 		while(converter.hasNextLine())
@@ -50,19 +50,24 @@ public class SongPlayer {
 	
 	public void generateRandom(String fileName, int numberofAvartanams) throws FileNotFoundException, UnsupportedEncodingException
 	{
-		int numberOfSwarams = numberofAvartanams * 8;
+		PrintWriter writer = new PrintWriter(fileName, "UTF-8");
+		writer.println(ragam.getFileNotation());
 		
+		for(int i = 0; i < numberofAvartanams; i++)
+		{
 		String toPrint = ragam.getRandomSwaram(true) + " ";
 		
-		for(int i = 0; i < numberOfSwarams; i++)
+		for(int j = 0; j < 8; j++)
 		{
 			toPrint = toPrint + ragam.getRandomSwaram(false) + " ";
 		}
 		System.out.println(toPrint);
-		
-		PrintWriter writer = new PrintWriter(fileName, "UTF-8");
-		writer.println(ragam.getFileNotation());
 		writer.println(toPrint);
+		
+		}
+		
+		
+		
 		writer.close();
 	}
 

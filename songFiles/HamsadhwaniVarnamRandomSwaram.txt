@@ -1,2 +1,21 @@
 S R2 G3 -- P -- N3
-N. .R R R G. N. , G. .S .P , .G S .R .P N .S , , S. P. .R N. , S 
+G N. , P G N. .G N S 
+R S. G .G S. R. .S P. , 
+R. G .P .N S N. , .S P 
+P R .S R. .N .N S. N. G 
+N G G , G .S N .S S 
+.N .S , P P. N R. .G , 
+P .S G. P G N S. N. P. 
+G. R. .N , .R R. .G P. R. 
+R. S. S R. .N P. N .P P 
+G. R G G , G G. P .G 
+G. R G G. R. S N , S. 
+.N R. G. R , G N P. S. 
+R , , N. R. .G N. S N. 
+S. G S , , .P G S R 
+.N S. P. G. N P G P. , 
+G. .P .G P N. R , P , 
+.N P. , S. G S. R. P P 
+.P R .S R , , N R N 
+G. P. , G N , R. G. .S 
+.N N N. R G .N G. R. .S 
